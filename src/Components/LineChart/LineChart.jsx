@@ -15,6 +15,7 @@ import {
     Legend,
     // zoomPlugin,
   } from 'chart.js';
+import { useEffect, useState } from 'react';
 
   ChartJS.register(
     CategoryScale,
@@ -31,6 +32,12 @@ import {
 const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
 
     // console.log(coinHistory)
+     const[innerWidth, setInnerWidth] = useState()
+
+     useEffect(()=>{
+        window.addEventListener('resize' , (()=>{setInnerWidth(window.innerWidth)}))
+        // console.log(innerWidth);
+     }, [innerWidth])
 
     const coinPrice = []
     const coinTimeStamp = []
@@ -79,7 +86,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
             }
         },
       };
+
       
+     
     return (
         <>
             <Row className="chartHeader">
@@ -87,6 +96,11 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
                 <div className="div">
                     <Typography.Title  level={2} className="chartTitle" >
                           {coinName} Price Chart </Typography.Title>
+                    {innerWidth < 800 &&  <Typography.Title  level={3} style={{color:'red'}} className="chartTitle" >
+                         To view the chart properly please rotate your mobile to landscape mode.     
+                     </Typography.Title>}
+
+
                 </div>
 
                <div className="div">
