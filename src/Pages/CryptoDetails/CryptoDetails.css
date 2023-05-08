@@ -1,0 +1,57 @@
+.coinDetailContainer{
+    padding: 1rem 3rem;
+}
+
+.coinHeadingContainer{
+    margin: 1rem;
+    text-align: center;
+}
+
+.coinHeadingContainer p{
+    font-size: 1.8rem;
+}
+
+.selectTimePeriod{
+    width: 90px;
+    margin:  1rem 0;
+}
+
+.statsContainer{
+    margin-top: 1.4rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+.coinValueStaticticsHeading p{
+    font-size: 1.5rem;
+}
+
+.coinValueStatictics , .otherStatsInfo{
+    margin: 1rem 2rem;
+
+}
+
+.coinStatsName  .ant-typography{
+    color: white !important;
+}
+
+.coinStats{
+    margin: .5rem;
+    background-color: #0d4585;
+}
+
+.coinDetailsHeading{
+    text-align: center;
+}
+
+.linkContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center ;
+}
+
+.coinLink{
+    text-align: center;
+}

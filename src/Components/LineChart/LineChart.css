@@ -1,0 +1,11 @@
+.chartHeader{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.priceContainer{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}

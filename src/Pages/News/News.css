@@ -1,0 +1,19 @@
+.news{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.newsImgContainer{
+    display: flex;
+    align-items: center;
+}
+
+.newsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    overflow-x: hidden;
+}

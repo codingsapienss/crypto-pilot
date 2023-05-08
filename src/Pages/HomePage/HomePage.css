@@ -1,0 +1,19 @@
+.globalStats{
+    text-align: center;
+    padding: 1rem;
+}
+
+
+.homeHeadingContainer{
+    padding: 2rem;
+}
+
+.home-title{
+    text-align: center;
+}
+
+.showMore{
+    float: right;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+}
