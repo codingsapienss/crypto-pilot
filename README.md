@@ -1,5 +1,5 @@
 # crypto-pilot
-Live Demo : https://imprsant-cryptopilot.netlify.app/
+Live Demo : https://cryptopilott.netlify.app/
 
 This is a cryptocurrency project where you can get all the latest information in detail about all famous cryptocurrencies.
 You can read and search most recent news related to almost all important cryptocurrencies.
