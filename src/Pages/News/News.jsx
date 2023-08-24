@@ -101,7 +101,7 @@ const News = ({ simplified }) => {
                       <Avatar style={{ marginRight: '10px' }} src={news.provider[0]?.image?.thumbnail?.contentUrl || getRandomImageUrl()} alt='news' />
                       <Text style={{ fontSize: '10px' }} className='providerName'>{news.provider[0]?.name}</Text>
                     </div>
-                    <Text style={{ float: 'right', fontSize: '10px' }}>
+                    <Text style={{ marginTop: '10px', float: 'right', fontSize: '10px' }}>
                       - {moment(news.datePublished).startOf('ss').fromNow()}
                     </Text>
                   </div>
