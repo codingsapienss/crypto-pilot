@@ -26,6 +26,7 @@ import {
 import LineChart from "../../Components/LineChart/LineChart";
 
 const CryptoDetails = () => {
+
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
 
@@ -58,17 +59,15 @@ const CryptoDetails = () => {
     },
     {
       title: "Market Cap",
-      value: `$ ${
-        cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)
-      }`,
+      value: `$ ${cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)
+        }`,
       icon: <DollarCircleOutlined />,
     },
     {
       title: "All-time-high(daily avg.)",
-      value: `$ ${
-        cryptoDetails?.allTimeHigh?.price &&
+      value: `$ ${cryptoDetails?.allTimeHigh?.price &&
         millify(cryptoDetails?.allTimeHigh?.price)
-      }`,
+        }`,
       icon: <TrophyOutlined />,
     },
   ];
@@ -95,17 +94,15 @@ const CryptoDetails = () => {
     },
     {
       title: "Total Supply",
-      value: `$ ${
-        cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)
-      }`,
+      value: `$ ${cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)
+        }`,
       icon: <ExclamationCircleOutlined />,
     },
     {
       title: "Circulating Supply",
-      value: `$ ${
-        cryptoDetails?.supply?.circulating &&
+      value: `$ ${cryptoDetails?.supply?.circulating &&
         millify(cryptoDetails?.supply?.circulating)
-      }`,
+        }`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
@@ -115,84 +112,84 @@ const CryptoDetails = () => {
 
   return (
     <Col className="coinDetailContainer">
-        <Col className="coinHeadingContainer">
-          <Title level={1} className="coinName">
-            {cryptoDetails?.name} Price
-          </Title>
-          <p>
-            {cryptoDetails?.name} live price in US Dollar. View value statistics,
-            Market cap and supply .
-          </p>
+      <Col className="coinHeadingContainer">
+        <Title level={1} className="coinName">
+          {cryptoDetails?.name} Price
+        </Title>
+        <p>
+          {cryptoDetails?.name} live price in US Dollar. View value statistics,
+          Market cap and supply .
+        </p>
+      </Col>
+
+      <Select
+        defaultValue={"7d"}
+        className="selectTimePeriod"
+        placeholder="Select time period"
+        onChange={(value) => {
+          setTimePeriod(value);
+        }}
+      >
+        {" "}
+        {time.map((date) => {
+          return <Option key={date}>{date}</Option>;
+        })}{" "}
+      </Select>
+
+      <LineChart
+        coinHistory={coinHistory}
+        currentPrice={millify(cryptoDetails?.price)}
+        coinName={cryptoDetails?.name}
+        timePeriod={timePeriod}
+      />
+
+      <Row sm={24} md={24} lg={12} className="statsContainer">
+
+        <Col className="coinValueStatictics">
+
+          <Col className="coinValueStaticticsHeading">
+            <Title level={2} className="coinDetailsHeading">
+              {cryptoDetails?.name} Statistics
+            </Title>
+            <p>An overview showing stats of {cryptoDetails?.name}</p>
+          </Col>
+
+          <div className="statsDetail">
+            {stats.map(({ icon, title, value }, i) => {
+              return (
+                <Card hoverable={true} key={i} className="coinStats">
+                  <Col className="coinStatsName">
+                    <Title level={5} >{icon} {title} : {value}</Title>
+                  </Col>
+                </Card>
+              );
+            })}
+          </div>
         </Col>
 
-        <Select
-          defaultValue={"7d"}
-          className="selectTimePeriod"
-          placeholder="Select time period"
-          onChange={(value) => {
-            setTimePeriod(value);
-          }}
-        >
-          {" "}
-          {time.map((date) => {
-            return <Option key={date}>{date}</Option>;
-          })}{" "}
-        </Select>
+        <Col className="otherStatsInfo">
+          <Col className="coinValueStaticticsHeading">
+            <Title level={2} className="coinDetailsHeading">
+              Other Statistics
+            </Title>
+            <p>An overview showing stats of all cryptocurrencies</p>
+          </Col>
 
-        <LineChart
-          coinHistory={coinHistory}
-          currentPrice={millify(cryptoDetails?.price)}
-          coinName={cryptoDetails?.name}
-          timePeriod = {timePeriod}
-        />
+          <div className="statsDetails">
+            {genericStats.map(({ icon, title, value }, i) => {
+              return (
+                <Card hoverable={true} key={`${i}o`} className="coinStats">
+                  <Col className="coinStatsName">
+                    <Title className='text' level={5}>{icon} {title} : {value}</Title>
+                  </Col>
+                </Card>
+              );
+            })}
+          </div>
 
-        <Row sm={24} md={24} lg={12} className="statsContainer">
+        </Col>
 
-            <Col className="coinValueStatictics">
-
-                <Col className="coinValueStaticticsHeading">
-                  <Title level={2} className="coinDetailsHeading">
-                    {cryptoDetails?.name} Statistics
-                  </Title>
-                  <p>An overview showing stats of {cryptoDetails?.name}</p>
-                </Col>
-              
-                  <div className="statsDetail">
-                  {stats.map(({ icon, title, value }, i) => {
-                      return (
-                        <Card hoverable={true} key={i} className="coinStats">
-                          <Col className="coinStatsName">
-                            <Title level={5} >{icon} {title} : {value}</Title>
-                          </Col>
-                        </Card>
-                      );
-                    })}
-                  </div>
-            </Col>
-
-            <Col className="otherStatsInfo">
-              <Col className="coinValueStaticticsHeading">
-                <Title level={2} className="coinDetailsHeading">
-                  Other Statistics
-                </Title>
-                <p>An overview showing stats of all cryptocurrencies</p>
-              </Col>
-            
-              <div className="statsDetails">
-                  {genericStats.map(({ icon, title, value }, i) => {
-                return (
-                  <Card hoverable={true} key={`${i}o`} className="coinStats">
-                    <Col className="coinStatsName">
-                      <Title className='text' level={5}>{icon} {title} : {value}</Title>
-                    </Col>
-                  </Card>
-                );
-              })}
-              </div>
-
-            </Col>
-
-        </Row>
+      </Row>
 
 
 
@@ -208,29 +205,29 @@ const CryptoDetails = () => {
 
 
 
-        <Col className="coinLinks">
-          <Title level={3} className="coinDetailsHeading">
-            {cryptoDetails?.name} Links
-          </Title>
-          <div className="linkContainer">
-            {cryptoDetails?.links?.map((link) => {
-              return (
-                        <Col key={link?.name} className="coinLink" 
-                          style={ {width:'300px' , margin:'.4rem 1rem'}}
-                        >
-                          <p>
-                            <span>{link?.type} : </span>
-                            <a href={link.url} target="_blank" rel="noreferrer">
-                            {link?.name}
-                          </a>
-                          </p>
-                        </Col>
-                  );
-                })}
-                 </div>
-            </Col>
-        </Col>
-      );
-    };
+      <Col className="coinLinks">
+        <Title level={3} className="coinDetailsHeading">
+          {cryptoDetails?.name} Links
+        </Title>
+        <div className="linkContainer">
+          {cryptoDetails?.links?.map((link) => {
+            return (
+              <Col key={link?.name} className="coinLink"
+                style={{ width: '300px', margin: '.4rem 1rem' }}
+              >
+                <p>
+                  <span>{link?.type} : </span>
+                  <a href={link.url} target="_blank" rel="noreferrer">
+                    {link?.name}
+                  </a>
+                </p>
+              </Col>
+            );
+          })}
+        </div>
+      </Col>
+    </Col>
+  );
+};
 
 export default CryptoDetails;

@@ -1,8 +1,11 @@
-.serachCrypto{
-    width: 70vw;
-    margin: 1rem auto; 
+.serachCrypto {
+  width: 70vw;
+  margin: 1rem auto;
 }
 
-.cryptoCardContainer{
-    padding: 2rem;
+.cryptoCardContainer {
+  max-width: 1200px;
+  /* padding: 2rem; */
+  text-align: center;
+  margin: auto !important;
 }

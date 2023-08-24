@@ -1,18 +1,18 @@
-.nav{
-    z-index: 3;
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    font-size: 2rem;
-    padding: 1.5rem;
+.nav {
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding: 1.5rem;
 }
 
-.icon{
-   align-content: stretch;
+.icon {
+  align-content: stretch;
 }
 
-.ant-menu-item-selected{
-    background-color: transparent !important ;
-    color: rgb(138, 138, 250) !important ;
+.ant-menu-item-selected {
+  background-color: transparent !important ;
+  color: rgb(138, 138, 250) !important ;
 }
