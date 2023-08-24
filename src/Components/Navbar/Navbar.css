@@ -5,14 +5,32 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  padding: 1.5rem;
-}
-
-.icon {
-  align-content: stretch;
+  padding: 1rem;
 }
 
 .ant-menu-item-selected {
   background-color: transparent !important ;
   color: rgb(138, 138, 250) !important ;
+}
+
+.ant-menu-item {
+  padding-inline: 50px 30px !important;
+  text-align: center !important;
+  width: auto !important;
+}
+
+.ant-menu-item:active {
+  background-color: transparent !important ;
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    font-size: 1.5rem;
+  }
+
+  .ant-menu-item {
+    padding-inline: 5px !important;
+    text-align: start !important;
+    width: auto !important;
+  }
 }
