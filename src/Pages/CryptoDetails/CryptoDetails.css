@@ -77,7 +77,6 @@
   }
 
   .coinStatsValue {
-    font-size: 0.8rem !important;
-    width: 65vw !important;
+    font-size: 0.7rem !important;
   }
 }
