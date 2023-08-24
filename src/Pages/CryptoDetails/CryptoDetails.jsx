@@ -117,8 +117,9 @@ const CryptoDetails = () => {
           {cryptoDetails?.name} Price
         </Title>
         <p>
-          {cryptoDetails?.name} live price in US. <br />  View value statistics,
-          Market cap and supply .
+          {cryptoDetails?.name} live price in US. <br />
+
+          <b > View value statistics, market-cap and supply.</b>
         </p>
       </Col>
 
@@ -216,7 +217,7 @@ const CryptoDetails = () => {
                 style={{ width: '300px', margin: '.4rem 1rem' }}
               >
                 <p>
-                  <span>{link?.type} : </span>
+                  <span className={'linkType'}>{link?.type} : </span>
                   <a href={link.url} target="_blank" rel="noreferrer">
                     {link?.name}
                   </a>

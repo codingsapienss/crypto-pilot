@@ -56,6 +56,10 @@
   text-align: center;
 }
 
+.linkType {
+  text-transform: capitalize;
+}
+
 @media screen and (max-width: 800px) {
   .coinDetailContainer {
     padding: 1rem;
