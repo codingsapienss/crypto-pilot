@@ -117,7 +117,7 @@ const CryptoDetails = () => {
           {cryptoDetails?.name} Price
         </Title>
         <p>
-          {cryptoDetails?.name} live price in US Dollar. View value statistics,
+          {cryptoDetails?.name} live price in US. <br />  View value statistics,
           Market cap and supply .
         </p>
       </Col>
@@ -159,7 +159,7 @@ const CryptoDetails = () => {
               return (
                 <Card hoverable={true} key={i} className="coinStats">
                   <Col className="coinStatsName">
-                    <Title level={5} >{icon} {title} : {value}</Title>
+                    <Title className='coinStatsValue' level={5} >{icon} {title} : {value}</Title>
                   </Col>
                 </Card>
               );
@@ -180,7 +180,7 @@ const CryptoDetails = () => {
               return (
                 <Card hoverable={true} key={`${i}o`} className="coinStats">
                   <Col className="coinStatsName">
-                    <Title className='text' level={5}>{icon} {title} : {value}</Title>
+                    <Title className='coinStatsValue' level={5}>{icon} {title} : {value}</Title>
                   </Col>
                 </Card>
               );

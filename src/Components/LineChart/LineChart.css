@@ -1,11 +1,22 @@
-.chartHeader{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.chartHeader {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-.priceContainer{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
+.priceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 800px) {
+  .chartTitle {
+    font-size: 1.2rem !important;
+  }
+
+  .currentPrice,
+  .priceChange {
+    font-size: 0.9rem !important;
+  }
 }
