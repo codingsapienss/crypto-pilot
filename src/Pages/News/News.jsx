@@ -112,6 +112,8 @@ const News = ({ simplified }) => {
         }
       </Row>
 
+
+
     </div>
   )
 }
