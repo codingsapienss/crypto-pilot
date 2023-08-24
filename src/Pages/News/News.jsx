@@ -97,11 +97,11 @@ const News = ({ simplified }) => {
                   </div>
 
                   <div className="providerContainer">
-                    <div style={{ marginTop: '10px' }}>
-                      <Avatar style={{ marginRight: '20px' }} src={news.provider[0]?.image?.thumbnail?.contentUrl || getRandomImageUrl()} alt='news' />
-                      <Text className='providerName'>{news.provider[0]?.name}</Text>
+                    <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}>
+                      <Avatar style={{ marginRight: '10px' }} src={news.provider[0]?.image?.thumbnail?.contentUrl || getRandomImageUrl()} alt='news' />
+                      <Text style={{ fontSize: '10px' }} className='providerName'>{news.provider[0]?.name}</Text>
                     </div>
-                    <Text style={{ float: 'right' }}>
+                    <Text style={{ float: 'right', fontSize: '10px' }}>
                       - {moment(news.datePublished).startOf('ss').fromNow()}
                     </Text>
                   </div>
