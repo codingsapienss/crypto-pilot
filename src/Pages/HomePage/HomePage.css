@@ -1,6 +1,8 @@
 .globalStats {
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .homeHeadingContainer {
@@ -9,7 +11,8 @@
 
 .home-title {
   text-align: center;
-  margin: 3rem 0 !important;
+  margin: 3rem auto !important;
+  width: 78vw;
 }
 
 .showMore {
