@@ -13,6 +13,8 @@
   text-align: center;
   margin: 3rem auto !important;
   width: 80vw;
+  text-decoration: underline;
+  text-underline-offset: 8px;
 }
 
 .showMore {

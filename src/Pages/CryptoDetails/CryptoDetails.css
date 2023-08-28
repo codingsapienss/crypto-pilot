@@ -19,6 +19,14 @@
   margin-bottom: 1rem;
 }
 
+.coinName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
 .statsContainer {
   margin-top: 1.4rem;
   display: flex;
@@ -46,6 +54,8 @@
 
 .coinDetailsHeading {
   text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .linkContainer {

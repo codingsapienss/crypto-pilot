@@ -24,6 +24,8 @@ import {
   FundOutlined,
 } from "@ant-design/icons";
 import LineChart from "../../Components/LineChart/LineChart";
+import { useLocation } from "react-router-dom";
+
 
 const CryptoDetails = () => {
 
@@ -40,6 +42,10 @@ const CryptoDetails = () => {
   // console.log(data);
   // console.log(cryptoDetails);
   // console.log(coinHistory);
+
+  const location = useLocation();
+  const img = location.state?.data;
+
 
   if (isFetching) return "Loading...";
 
@@ -114,6 +120,7 @@ const CryptoDetails = () => {
     <Col className="coinDetailContainer">
       <Col className="coinHeadingContainer">
         <Title level={1} className="coinName">
+          <img style={{ width: '2.5rem', marginRight: '10px' }} src={img} alt={cryptoDetails?.name} />
           {cryptoDetails?.name} Price Chart
         </Title>
         {/* <p>

@@ -47,7 +47,7 @@ const Cryptocurrencies = ({ simplified }) => {
           cryptos?.map((coin) => {
             return <Col className='cryptoCard' xs={24} sm={24} lg={6} key={coin.uuid}>
               {/* console.log(coin); */}
-              <Link to={`/crypto/${coin.uuid}`} >
+              <Link to={`/crypto/${coin.uuid}`} state={{ data: coin.iconUrl }}  >
                 <Card title={`${coin.rank}. ${coin.name} `}
                   extra={<img style={{ width: '2.5rem' }} className='crypto-img'
                     src={coin.iconUrl} />}
