@@ -91,13 +91,13 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
 
 
   return (
-    <>
+    <div style={{ position: "relative", margin: "auto", width: "90vw", maxWidth: '1400px' }}>
       <Row className="chartHeader">
 
         <div className="div">
-          <Typography.Title level={2} className="chartTitle" >
+          {/* <Typography.Title level={2} className="chartTitle" >
             {coinName} Price Chart
-          </Typography.Title>
+          </Typography.Title> */}
           {innerWidth < 800 && <Typography.Title level={3} style={{ color: 'red' }} className="chartTitle" >
             To view the chart properly please rotate your mobile to landscape mode.
           </Typography.Title>}
@@ -124,9 +124,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
 
       </Row>
 
-      <Line data={data} options={options} />
+      <Line style={{ border: '3px solid rgb(0, 0, 34)', cursor: 'pointer', borderRadius: '5px', padding: '0 2px' }} data={data} options={options} />
 
-    </>
+    </div>
   )
 }
 

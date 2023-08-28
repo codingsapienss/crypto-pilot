@@ -114,13 +114,13 @@ const CryptoDetails = () => {
     <Col className="coinDetailContainer">
       <Col className="coinHeadingContainer">
         <Title level={1} className="coinName">
-          {cryptoDetails?.name} Price
+          {cryptoDetails?.name} Price Chart
         </Title>
-        <p>
+        {/* <p>
           {cryptoDetails?.name} live price in US. <br />
 
           <b > View value statistics, market-cap and supply.</b>
-        </p>
+        </p> */}
       </Col>
 
       <Select
