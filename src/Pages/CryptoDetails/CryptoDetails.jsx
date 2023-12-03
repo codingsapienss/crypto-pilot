@@ -1,6 +1,6 @@
 // import './CryptoDetails.scss'
 // import HTMLReactParser from 'html-react-parser' ;
-import './CryptoDetails.css'
+import "./CryptoDetails.css";
 import { useParams } from "react-router-dom";
 import millify from "millify";
 import { Card, Col, Row, Select, Typography } from "antd";
@@ -26,9 +26,7 @@ import {
 import LineChart from "../../Components/LineChart/LineChart";
 import { useLocation } from "react-router-dom";
 
-
 const CryptoDetails = () => {
-
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
 
@@ -46,7 +44,6 @@ const CryptoDetails = () => {
   const location = useLocation();
   const img = location.state?.data;
 
-
   if (isFetching) return "Loading...";
 
   const time = ["1h", "3h", "12h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"];
@@ -60,25 +57,26 @@ const CryptoDetails = () => {
     { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`,
+      value: `$ ${
+        cryptoDetails["24hVolume"] && millify(cryptoDetails["24hVolume"])
+      }`,
       icon: <ThunderboltOutlined />,
     },
     {
       title: "Market Cap",
-      value: `$ ${cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)
-        }`,
+      value: `$ ${
+        cryptoDetails?.marketCap && millify(cryptoDetails?.marketCap)
+      }`,
       icon: <DollarCircleOutlined />,
     },
     {
       title: "All-time-high(daily avg.)",
-      value: `$ ${cryptoDetails?.allTimeHigh?.price &&
+      value: `$ ${
+        cryptoDetails?.allTimeHigh?.price &&
         millify(cryptoDetails?.allTimeHigh?.price)
-        }`,
+      }`,
       icon: <TrophyOutlined />,
     },
-  ];
-
-  const genericStats = [
     {
       title: "Number Of Markets",
       value: cryptoDetails?.numberOfMarkets,
@@ -100,28 +98,68 @@ const CryptoDetails = () => {
     },
     {
       title: "Total Supply",
-      value: `$ ${cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)
-        }`,
+      value: `$ ${
+        cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)
+      }`,
       icon: <ExclamationCircleOutlined />,
     },
     {
       title: "Circulating Supply",
-      value: `$ ${cryptoDetails?.supply?.circulating &&
+      value: `$ ${
+        cryptoDetails?.supply?.circulating &&
         millify(cryptoDetails?.supply?.circulating)
-        }`,
+      }`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
 
-
-
+  // const genericStats = [
+  //   {
+  //     title: "Number Of Markets",
+  //     value: cryptoDetails?.numberOfMarkets,
+  //     icon: <FundOutlined />,
+  //   },
+  //   {
+  //     title: "Number Of Exchanges",
+  //     value: cryptoDetails?.numberOfExchanges,
+  //     icon: <MoneyCollectOutlined />,
+  //   },
+  //   {
+  //     title: "Aprroved Supply",
+  //     value: cryptoDetails?.supply?.confirmed ? (
+  //       <CheckOutlined />
+  //     ) : (
+  //       <StopOutlined />
+  //     ),
+  //     icon: <ExclamationCircleOutlined />,
+  //   },
+  //   {
+  //     title: "Total Supply",
+  //     value: `$ ${
+  //       cryptoDetails?.supply?.total && millify(cryptoDetails?.supply?.total)
+  //     }`,
+  //     icon: <ExclamationCircleOutlined />,
+  //   },
+  //   {
+  //     title: "Circulating Supply",
+  //     value: `$ ${
+  //       cryptoDetails?.supply?.circulating &&
+  //       millify(cryptoDetails?.supply?.circulating)
+  //     }`,
+  //     icon: <ExclamationCircleOutlined />,
+  //   },
+  // ];
 
   return (
     <Col className="coinDetailContainer">
       <Col className="coinHeadingContainer">
         <Title level={1} className="coinName">
-          <img style={{ width: '2.5rem', marginRight: '10px' }} src={img} alt={cryptoDetails?.name} />
           {cryptoDetails?.name} Price Chart
+          <img
+            style={{ width: "2.5rem", marginRight: "10px" }}
+            src={img}
+            alt={cryptoDetails?.name}
+          />
         </Title>
         {/* <p>
           {cryptoDetails?.name} live price in US. <br />
@@ -152,9 +190,7 @@ const CryptoDetails = () => {
       />
 
       <Row sm={24} md={24} lg={12} className="statsContainer">
-
         <Col className="coinValueStatictics">
-
           <Col className="coinValueStaticticsHeading">
             <Title level={2} className="coinDetailsHeading">
               {cryptoDetails?.name} Statistics
@@ -167,7 +203,9 @@ const CryptoDetails = () => {
               return (
                 <Card hoverable={true} key={i} className="coinStats">
                   <Col className="coinStatsName">
-                    <Title className='coinStatsValue' level={5} >{icon} {title} : {value}</Title>
+                    <Title className="coinStatsValue">
+                      {icon} {title} : {value}
+                    </Title>
                   </Col>
                 </Card>
               );
@@ -175,7 +213,7 @@ const CryptoDetails = () => {
           </div>
         </Col>
 
-        <Col className="otherStatsInfo">
+        {/* <Col className="otherStatsInfo">
           <Col className="coinValueStaticticsHeading">
             <Title level={2} className="coinDetailsHeading">
               Other Statistics
@@ -188,18 +226,16 @@ const CryptoDetails = () => {
               return (
                 <Card hoverable={true} key={`${i}o`} className="coinStats">
                   <Col className="coinStatsName">
-                    <Title className='coinStatsValue' level={5}>{icon} {title} : {value}</Title>
+                    <Title className="coinStatsValue">
+                      {icon} {title} : {value}
+                    </Title>
                   </Col>
                 </Card>
               );
             })}
           </div>
-
-        </Col>
-
+        </Col> */}
       </Row>
-
-
 
       {/* 
           <Col className='coinDescLink'>
@@ -211,8 +247,6 @@ const CryptoDetails = () => {
             </Row>
           </Col> */}
 
-
-
       <Col className="coinLinks">
         <Title level={3} className="coinDetailsHeading">
           {cryptoDetails?.name} Links
@@ -220,11 +254,13 @@ const CryptoDetails = () => {
         <div className="linkContainer">
           {cryptoDetails?.links?.map((link) => {
             return (
-              <Col key={link?.name} className="coinLink"
-                style={{ width: '300px', margin: '.4rem 1rem' }}
+              <Col
+                key={link?.name}
+                className="coinLink"
+                style={{ width: "300px", margin: ".4rem 1rem" }}
               >
                 <p>
-                  <span className={'linkType'}>{link?.type} : </span>
+                  <span className={"linkType"}>{link?.type} : </span>
                   <a href={link.url} target="_blank" rel="noreferrer">
                     {link?.name}
                   </a>

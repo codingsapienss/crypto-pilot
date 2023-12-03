@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import './LineChart.css'
-import { Col, Row, Typography } from "antd"
-import { Line } from "react-chartjs-2"
-import 'chart.js/auto';
-import zoomPlugin from 'chartjs-plugin-zoom';
+import "./LineChart.css";
+import { Col, Row, Typography } from "antd";
+import { Line } from "react-chartjs-2";
+import "chart.js/auto";
+import zoomPlugin from "chartjs-plugin-zoom";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,8 +14,8 @@ import {
   Tooltip,
   Legend,
   // zoomPlugin,
-} from 'chart.js';
-import { useEffect, useState } from 'react';
+} from "chart.js";
+import { useEffect, useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -30,32 +30,37 @@ ChartJS.register(
 
 // const { Title } = Typography
 const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
-
   // console.log(coinHistory)
-  const [innerWidth, setInnerWidth] = useState()
+  const [innerWidth, setInnerWidth] = useState();
 
   useEffect(() => {
-    window.addEventListener('resize', (() => { setInnerWidth(window.innerWidth) }))
+    window.addEventListener("resize", () => {
+      setInnerWidth(window.innerWidth);
+    });
     // console.log(innerWidth);
-  }, [innerWidth])
+  }, [innerWidth]);
 
-  const coinPrice = []
-  const coinTimeStamp = []
+  const coinPrice = [];
+  const coinTimeStamp = [];
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinPrice.unshift(coinHistory.data.history[i].price);
-    coinTimeStamp.unshift(new Date(coinHistory?.data?.history[i].timestamp * 1000).toLocaleDateString())
+    coinTimeStamp.unshift(
+      new Date(
+        coinHistory?.data?.history[i].timestamp * 1000
+      ).toLocaleDateString()
+    );
   }
 
   const data = {
     labels: coinTimeStamp,
     datasets: [
       {
-        label: 'Price In USD',
+        label: "Price In USD",
         data: coinPrice,
         fill: false,
-        backgroundColor: '#0071bd',
-        borderColor: '#0071bd',
+        backgroundColor: "#0071bd",
+        borderColor: "#0071bd",
       },
     ],
   };
@@ -64,7 +69,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
@@ -73,40 +78,49 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
       zoom: {
         pan: {
           enabled: true,
-          mode: 'x'
+          mode: "x",
         },
         zoom: {
           pinch: {
-            enabled: true
+            enabled: true,
           },
           wheel: {
-            enabled: true
+            enabled: true,
           },
-          mode: 'x',
-        }
-      }
+          mode: "x",
+        },
+      },
     },
   };
 
-
-
   return (
-    <div style={{ position: "relative", margin: "auto", width: "90vw", maxWidth: '1400px' }}>
+    <div
+      style={{
+        position: "relative",
+        margin: "auto",
+        width: "75vw",
+        maxWidth: "800px",
+      }}
+    >
       <Row className="chartHeader">
-
         <div className="div">
           {/* <Typography.Title level={2} className="chartTitle" >
             {coinName} Price Chart
           </Typography.Title> */}
-          {innerWidth < 800 && <Typography.Title level={3} style={{ color: 'red' }} className="chartTitle" >
-            To view the chart properly please rotate your mobile to landscape mode.
-          </Typography.Title>}
-
-
+          {innerWidth < 800 && (
+            <Typography.Title
+              level={3}
+              style={{ color: "red" }}
+              className="chartTitle"
+            >
+              To view the chart properly please rotate your mobile to landscape
+              mode.
+            </Typography.Title>
+          )}
         </div>
 
         <div className="div">
-          <Row sm={24} md={24} lg={12} className="priceContainer" >
+          <Row sm={24} md={24} lg={12} className="priceContainer">
             <Col>
               <Typography.Title level={4} className="priceChange">
                 Total change in {timePeriod} : {coinHistory?.data?.change} %
@@ -118,16 +132,22 @@ const LineChart = ({ coinHistory, currentPrice, coinName, timePeriod }) => {
                 {coinName} current price : ${currentPrice}
               </Typography.Title>
             </Col>
-
           </Row>
         </div>
-
       </Row>
 
-      <Line style={{ border: '3px solid rgb(0, 0, 34)', cursor: 'pointer', borderRadius: '5px', padding: '0 2px' }} data={data} options={options} />
-
+      <Line
+        style={{
+          border: "3px solid rgb(0, 0, 34)",
+          cursor: "pointer",
+          borderRadius: "5px",
+          padding: "0 2px",
+        }}
+        data={data}
+        options={options}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default LineChart
+export default LineChart;

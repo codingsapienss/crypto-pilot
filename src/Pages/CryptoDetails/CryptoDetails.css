@@ -1,6 +1,6 @@
 .coinDetailContainer {
-  max-width: 1400px;
-  width: 90vw;
+  width: 75vw;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -14,9 +14,9 @@
 }
 
 .selectTimePeriod {
-  width: 100px;
+  width: 80px;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 .coinName {
@@ -27,12 +27,18 @@
   text-underline-offset: 5px;
 }
 
+.coinName img {
+  margin: 1rem;
+}
+
 .statsContainer {
   margin-top: 1.4rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  justify-content: space-around;
+  align-items: flex-start;
   text-align: center;
+  width: 100%;
 }
 .coinValueStaticticsHeading p {
   font-size: 1.5rem;
@@ -40,7 +46,15 @@
 
 .coinValueStatictics,
 .otherStatsInfo {
-  margin: 1rem 2rem;
+  /* margin: 1rem 2rem; */
+  /* width: 45%; */
+}
+
+.statsDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .coinStatsName .ant-typography {
@@ -50,6 +64,11 @@
 .coinStats {
   margin: 0.5rem;
   background-color: #0d4585;
+  width: 45%;
+}
+
+.coinStatsValue {
+  font-size: 0.8rem !important;
 }
 
 .coinDetailsHeading {
@@ -77,7 +96,8 @@
   .coinName {
     font-size: 1.5rem !important;
     text-decoration: none;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
   }
 
   .coinHeadingContainer p {
@@ -87,12 +107,19 @@
   .coinDetailsHeading {
     font-size: 1.5rem !important;
   }
+  .coinValueStatictics,
+  .otherStatsInfo {
+    /* margin: 1rem 2rem; */
+    width: 80%;
+  }
 
   .coinValueStaticticsHeading p {
     font-size: 1rem !important;
   }
-
+  .coinStats {
+    width: 90%;
+  }
   .coinStatsValue {
-    font-size: 0.7rem !important;
+    font-size: 0.6rem !important;
   }
 }
