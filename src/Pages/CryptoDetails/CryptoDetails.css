@@ -110,14 +110,14 @@
   .coinValueStatictics,
   .otherStatsInfo {
     /* margin: 1rem 2rem; */
-    width: 80%;
+    width: 95%;
   }
 
   .coinValueStaticticsHeading p {
     font-size: 1rem !important;
   }
   .coinStats {
-    width: 90%;
+    width: 100%;
   }
   .coinStatsValue {
     font-size: 0.6rem !important;
