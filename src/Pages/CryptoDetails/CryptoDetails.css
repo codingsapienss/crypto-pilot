@@ -44,11 +44,11 @@
   font-size: 1.5rem;
 }
 
-.coinValueStatictics,
+/* .coinValueStatictics,
 .otherStatsInfo {
-  /* margin: 1rem 2rem; */
-  /* width: 45%; */
-}
+  margin: 1rem 2rem;
+  width: 45%;
+} */
 
 .statsDetail {
   display: flex;
@@ -122,4 +122,11 @@
   .coinStatsValue {
     font-size: 0.6rem !important;
   }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
 }

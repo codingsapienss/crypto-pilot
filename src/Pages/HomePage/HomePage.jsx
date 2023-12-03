@@ -14,7 +14,11 @@ const HomePage = () => {
   const globalStats = data?.data?.stats;
 
   if (isFetching) {
-    return "Loading";
+    return (
+      <Title level={1} className="loading">
+        Loading...
+      </Title>
+    );
   }
 
   return (

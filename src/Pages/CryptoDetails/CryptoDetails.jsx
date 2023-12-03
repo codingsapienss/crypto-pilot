@@ -44,8 +44,13 @@ const CryptoDetails = () => {
   const location = useLocation();
   const img = location.state?.data;
 
-  if (isFetching) return "Loading...";
-
+  if (isFetching) {
+    return (
+      <Title level={1} className="loading">
+        Loading...
+      </Title>
+    );
+  }
   const time = ["1h", "3h", "12h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"];
 
   const stats = [
