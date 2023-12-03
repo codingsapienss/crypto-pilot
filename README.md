@@ -1,14 +1,12 @@
 # crypto-pilot
 Live Demo : https://cryptopilott.netlify.app/
 
-This is a cryptocurrency project where you can get all the latest information in detail about all famous cryptocurrencies.
-You can read and search most recent news related to almost all important cryptocurrencies.
-I have used react-chartjs-2 so you can also see the price history of all important cryptocurrencies visually with the help of line chart for a variety of timelines.
-In this project I have used React Redux Toolkit for state management and React Query for fetching the data from 2 APIs.
+"This is a cryptocurrency project where you can find detailed information about all popular cryptocurrencies:
 
+➤ Explore and search for the latest news related to almost all major cryptocurrencies.
 
-For fetching crypto related all the information like all the stats and price details including price history data for line chart I have used "Coinranking API" and for fetching
-news related to all the cryptocurrencies I have used 'Bing News Search API'.
+➤ Utilizing react-charts-2, you can visually track the price history of significant cryptocurrencies through interactive line charts for various timelines.
 
-This project is just a MVP right now and I have listed a lot of features to add in this project.
-I hope you will love this project.
+➤ In this project, I've implemented React Redux Toolkit for state management and utilized React Query to fetch data from two APIs.
+
+➤ To access crypto-related information, including statistics, price details, and price history data for the line charts, I've integrated the 'Coinranking API.' Additionally, for news related to all cryptocurrencies, I've integrated the 'Bing News Search API.'"
