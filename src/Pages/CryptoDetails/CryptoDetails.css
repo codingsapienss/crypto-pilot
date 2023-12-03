@@ -96,6 +96,11 @@
   .coinDetailContainer {
     width: 90vw;
   }
+  .selectTimePeriod {
+    width: 80px;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
   .coinName {
     font-size: 1.5rem !important;
     text-decoration: none;
