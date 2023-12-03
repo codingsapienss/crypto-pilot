@@ -204,7 +204,7 @@ const CryptoDetails = () => {
                 <Card hoverable={true} key={i} className="coinStats">
                   <Col className="coinStatsName">
                     <Title className="coinStatsValue">
-                      {icon} {title} : {value}
+                      {i + 1}. {icon} {title} : {value}
                     </Title>
                   </Col>
                 </Card>
