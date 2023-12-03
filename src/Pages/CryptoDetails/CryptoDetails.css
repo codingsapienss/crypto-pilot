@@ -93,6 +93,9 @@
 }
 
 @media screen and (max-width: 800px) {
+  .coinDetailContainer {
+    width: 90vw;
+  }
   .coinName {
     font-size: 1.5rem !important;
     text-decoration: none;
