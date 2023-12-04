@@ -3,11 +3,12 @@
   "short_name": "Crypto Pilot",
   "theme_color": "#008bf2",
   "background_color": "#2196f3",
+  "display_override": ["window-controls-overlay","fullscreen", "minimal-ui"],
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
-
+  "id" : "/",
   "icons": [
     {
       "src" : "./maskable_icon.png" ,
@@ -39,6 +40,21 @@
       "src" : "./logo 512.png" ,
       "sizes" : "512x512",
       "type" : "image/png"
+    }
+  ], 
+  "description": "This is a cryptocurrency project where you can find detailed information about all popular cryptocurrencies",
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot2.png",
+      "type": "image/png",
+      "sizes": "720x540",
+      "form_factor": "wide"
     }
   ]
 }
